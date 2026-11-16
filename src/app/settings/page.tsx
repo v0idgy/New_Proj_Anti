@@ -118,11 +118,11 @@ export default async function SettingsPage() {
               {repos.map((repo) => (
                 <div
                   key={repo.id}
-                  className="flex items-center justify-between p-3 rounded-lg border border-zinc-800 bg-zinc-900/80 hover:border-zinc-700 transition-colors"
+                  className="flex items-center justify-between p-3 rounded-lg border border-zinc-800 bg-zinc-900/80 hover:border-zinc-700 hover:bg-zinc-850/60 transition-all duration-200 ease-in-out"
                 >
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold font-mono text-zinc-200">
+                      <span className="text-xs font-bold font-mono text-zinc-200 tracking-tight">
                         {repo.name}
                       </span>
                       <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-400">

@@ -57,12 +57,12 @@ export default async function TeamPage() {
           return (
             <div
               key={dev.id}
-              className={`rounded-xl border p-5 backdrop-blur-sm transition-all hover:border-zinc-700 bg-zinc-900/60 shadow-sm ${
+              className={`rounded-xl border p-5 backdrop-blur-sm transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/20 bg-zinc-900/60 ${
                 isOverloaded
-                  ? 'border-rose-500/30'
+                  ? 'border-rose-500/30 hover:border-rose-500/50'
                   : isAvailable
-                  ? 'border-emerald-500/30'
-                  : 'border-zinc-800'
+                  ? 'border-emerald-500/30 hover:border-emerald-500/50'
+                  : 'border-zinc-800 hover:border-zinc-700'
               }`}
             >
               <div className="flex items-start justify-between">
@@ -85,7 +85,7 @@ export default async function TeamPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-semibold text-zinc-100">
+                    <h3 className="text-sm font-semibold text-zinc-100 tracking-tight">
                       {dev.name}
                     </h3>
                     <p className="text-xs text-zinc-500">@{dev.handle}</p>
@@ -93,7 +93,7 @@ export default async function TeamPage() {
                 </div>
 
                 <span
-                  className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border uppercase tracking-wider ${
+                  className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border uppercase tracking-wider transition-colors duration-200 ${
                     isOverloaded
                       ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
                       : isAvailable
@@ -168,7 +168,7 @@ export default async function TeamPage() {
               {members.map((dev) => {
                 const ratio = (dev.activeReviewsCount / (dev.authoredPRsCount || 1)).toFixed(1);
                 return (
-                  <tr key={dev.id} className="hover:bg-zinc-850/40 transition-colors">
+                  <tr key={dev.id} className="hover:bg-zinc-800/50 transition-all duration-200 ease-in-out">
                     <td className="py-3 text-zinc-200 font-medium flex items-center gap-2">
                       <img
                         src={dev.avatarUrl}

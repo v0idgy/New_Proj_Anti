@@ -122,31 +122,31 @@ export function Sidebar({
               href={item.href}
               onClick={isMobile ? onCloseMobile : undefined}
               title={collapsed && !isMobile ? item.label : undefined}
-              className={`group relative flex items-center gap-3 rounded-lg px-2.5 py-2 text-sm font-medium transition-colors ${
+              className={`group relative flex items-center gap-3 rounded-lg px-2.5 py-2 text-sm font-medium transition-all duration-200 ease-in-out ${
                 isActive
-                  ? 'bg-zinc-800/90 text-white font-semibold shadow-sm'
-                  : 'text-zinc-400 hover:bg-zinc-850 hover:text-zinc-200'
+                  ? 'bg-zinc-800 text-white font-semibold shadow-sm shadow-black/30'
+                  : 'text-zinc-400 hover:bg-zinc-800/60 hover:text-zinc-100'
               } ${collapsed && !isMobile ? 'justify-center px-0' : ''}`}
             >
               {isActive && (
-                <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r bg-indigo-500" />
+                <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
               )}
               <Icon
-                className={`h-4 w-4 shrink-0 transition-colors ${
-                  isActive ? 'text-indigo-400' : 'text-zinc-400 group-hover:text-zinc-300'
+                className={`h-4 w-4 shrink-0 transition-colors duration-200 ${
+                  isActive ? 'text-indigo-400' : 'text-zinc-400 group-hover:text-zinc-200'
                 }`}
               />
 
               {(!collapsed || isMobile) && (
-                <span className="flex-1 truncate">{item.label}</span>
+                <span className="flex-1 truncate tracking-tight">{item.label}</span>
               )}
 
               {(!collapsed || isMobile) && item.badge && (
                 <span
-                  className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
+                  className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full transition-colors duration-200 ${
                     isActive
-                      ? 'bg-indigo-500/20 text-indigo-300'
-                      : 'bg-zinc-800 text-zinc-400 group-hover:bg-zinc-750'
+                      ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30'
+                      : 'bg-zinc-800/90 text-zinc-400 group-hover:bg-zinc-700/80 group-hover:text-zinc-300'
                   }`}
                 >
                   {item.badge}

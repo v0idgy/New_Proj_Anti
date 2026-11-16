@@ -140,10 +140,10 @@ export default async function AnalyticsPage() {
             <span className="text-xs text-zinc-400">Lines Changed</span>
           </div>
 
-          <div className="mt-4 space-y-4">
-            <div className="flex items-center justify-between p-3 rounded-lg border border-zinc-800 bg-zinc-900/80">
+          <div className="mt-4 space-y-3">
+            <div className="flex items-center justify-between p-3 rounded-lg border border-zinc-800 bg-zinc-900/80 hover:border-zinc-700/80 hover:bg-zinc-850/60 transition-all duration-200 ease-in-out">
               <div>
-                <div className="text-xs font-semibold text-zinc-200">
+                <div className="text-xs font-semibold text-zinc-200 tracking-tight">
                   Small (&lt;200 LOC)
                 </div>
                 <div className="text-[11px] text-zinc-400">
@@ -158,9 +158,9 @@ export default async function AnalyticsPage() {
               </div>
             </div>
 
-            <div className="flex items-center justify-between p-3 rounded-lg border border-zinc-800 bg-zinc-900/80">
+            <div className="flex items-center justify-between p-3 rounded-lg border border-zinc-800 bg-zinc-900/80 hover:border-zinc-700/80 hover:bg-zinc-850/60 transition-all duration-200 ease-in-out">
               <div>
-                <div className="text-xs font-semibold text-zinc-200">
+                <div className="text-xs font-semibold text-zinc-200 tracking-tight">
                   Medium (200 - 500 LOC)
                 </div>
                 <div className="text-[11px] text-zinc-400">
@@ -175,9 +175,9 @@ export default async function AnalyticsPage() {
               </div>
             </div>
 
-            <div className="flex items-center justify-between p-3 rounded-lg border border-zinc-800 bg-zinc-900/80">
+            <div className="flex items-center justify-between p-3 rounded-lg border border-zinc-800 bg-zinc-900/80 hover:border-zinc-700/80 hover:bg-zinc-850/60 transition-all duration-200 ease-in-out">
               <div>
-                <div className="text-xs font-semibold text-zinc-200">
+                <div className="text-xs font-semibold text-zinc-200 tracking-tight">
                   Large (&gt;500 LOC)
                 </div>
                 <div className="text-[11px] text-zinc-400">

@@ -17,6 +17,7 @@ import { PullRequest } from '@/types';
 import { PRStatusPill } from '@/components/ui/PRStatusPill';
 import { CIStatusBadge } from '@/components/ui/CIStatusBadge';
 import { useToast } from '@/components/ui/Toast';
+import { formatDate } from '@/lib/utils';
 
 interface PRDetailDrawerProps {
   pr: PullRequest | null;
@@ -130,7 +131,7 @@ export function PRDetailDrawer({ pr, onClose }: PRDetailDrawerProps) {
                 <span className="absolute -left-[19px] top-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
                 <div className="font-semibold text-zinc-200">Opened</div>
                 <div className="text-[10px] text-zinc-500 font-mono">
-                  {new Date(pr.createdAt).toLocaleDateString()}
+                  {formatDate(pr.createdAt)}
                 </div>
               </div>
 

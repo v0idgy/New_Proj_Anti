@@ -25,12 +25,12 @@ export function MetricCard({
   const isFavorable = invertedDelta ? !isPositive : isPositive;
 
   return (
-    <div className="relative overflow-hidden rounded-xl border border-zinc-850 bg-zinc-900/60 p-5 backdrop-blur-sm transition-all hover:border-zinc-700/80 hover:bg-zinc-900/90 shadow-sm">
+    <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/60 p-5 backdrop-blur-sm transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:border-zinc-700/80 hover:bg-zinc-900/90 hover:shadow-md hover:shadow-black/20">
       <div className="flex items-center justify-between">
         <span className="text-xs font-medium uppercase tracking-wider text-zinc-400">
           {title}
         </span>
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-950/60 text-zinc-300">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-950/60 text-zinc-400 group-hover:text-indigo-400 group-hover:border-indigo-500/30 transition-all duration-200 ease-in-out">
           <Icon className="h-4 w-4" />
         </div>
       </div>
@@ -42,7 +42,7 @@ export function MetricCard({
 
         {delta !== undefined && (
           <span
-            className={`inline-flex items-center text-xs font-semibold px-1.5 py-0.5 rounded ${
+            className={`inline-flex items-center text-xs font-semibold px-1.5 py-0.5 rounded transition-colors duration-200 ${
               isFavorable
                 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
                 : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
@@ -58,7 +58,7 @@ export function MetricCard({
         )}
       </div>
 
-      <div className="mt-2 text-xs text-zinc-500">
+      <div className="mt-2 text-xs text-zinc-500 tracking-tight">
         {description || trendPeriod}
       </div>
     </div>

@@ -27,10 +27,11 @@ export function AppShell({ children }: AppShellProps) {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 flex md:hidden">
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-300 ease-in-out"
             onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close mobile sidebar backdrop"
           />
-          <div className="relative z-50 flex h-full">
+          <div className="relative z-50 flex h-full shadow-2xl shadow-black animate-in slide-in-from-left duration-200">
             <Sidebar
               collapsed={false}
               onToggleCollapse={() => {}}
