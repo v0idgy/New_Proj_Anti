@@ -114,11 +114,11 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500/15 border border-indigo-500/30 text-indigo-400">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-500/15 border border-red-500/30 text-red-400">
               <GitPullRequest className="h-4 w-4" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-zinc-100">
+              <h2 className="text-base font-semibold tracking-tight text-zinc-100">
                 Register New Pull Request
               </h2>
               <p className="text-xs text-zinc-400">
@@ -147,7 +147,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
               id="pr-title-input"
               {...register('title')}
               placeholder="e.g. feat(auth): add passkey authentication support"
-              className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-zinc-100 placeholder-zinc-500 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+              className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-zinc-100 placeholder-zinc-500 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-colors"
             />
             {errors.title && (
               <p className="mt-1 flex items-center gap-1 text-[11px] text-rose-400 font-mono">
@@ -165,7 +165,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
               </label>
               <select
                 {...register('repository')}
-                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-zinc-200 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors font-mono"
+                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-zinc-200 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-colors font-mono"
               >
                 <option value="frontend-core">frontend-core</option>
                 <option value="api-gateway">api-gateway</option>
@@ -184,7 +184,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
               </label>
               <select
                 {...register('targetBranch')}
-                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-zinc-200 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors font-mono"
+                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-zinc-200 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-colors font-mono"
               >
                 <option value="main">main</option>
                 <option value="master">master</option>
@@ -205,7 +205,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
                 id="pr-branch-input"
                 {...register('branch')}
                 placeholder="feat/my-new-feature"
-                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 pl-8 pr-3 py-2 font-mono text-zinc-100 placeholder-zinc-500 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 pl-8 pr-3 py-2 font-mono text-zinc-100 placeholder-zinc-500 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-colors"
               />
             </div>
             {errors.branch && (
@@ -223,7 +223,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
             </label>
             <select
               {...register('authorId')}
-              className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-zinc-200 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+              className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 text-zinc-200 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-colors"
             >
               {MOCK_DEVELOPERS.map((dev) => (
                 <option key={dev.id} value={dev.id}>
@@ -251,10 +251,10 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
                     type="button"
                     key={dev.id}
                     onClick={() => toggleReviewer(dev.id)}
-                    className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs transition-colors ${
+                    className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs transition-all duration-200 ${
                       isSelected
-                        ? 'border-indigo-500/50 bg-indigo-500/20 text-indigo-300 font-medium'
-                        : 'border-zinc-800 bg-zinc-950/60 text-zinc-400 hover:border-zinc-700 hover:text-zinc-200'
+                        ? 'border-red-500 bg-red-600 text-white shadow-sm shadow-red-500/30 font-medium'
+                        : 'border-zinc-700 bg-transparent text-zinc-300 hover:bg-zinc-800 hover:border-zinc-600'
                     }`}
                   >
                     <img
@@ -283,7 +283,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
               <input
                 type="number"
                 {...register('linesAdded', { valueAsNumber: true })}
-                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 font-mono text-emerald-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 font-mono text-emerald-400 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-colors"
               />
               {errors.linesAdded && (
                 <p className="mt-1 text-[11px] text-rose-400 font-mono">
@@ -299,7 +299,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
               <input
                 type="number"
                 {...register('linesDeleted', { valueAsNumber: true })}
-                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 font-mono text-rose-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2 font-mono text-rose-400 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-colors"
               />
               {errors.linesDeleted && (
                 <p className="mt-1 text-[11px] text-rose-400 font-mono">
@@ -314,7 +314,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
             <button
               type="button"
               onClick={onClose}
-              className="rounded-lg border border-zinc-800 px-4 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-800 transition-colors"
+              className="btn-secondary"
             >
               Cancel
             </button>
@@ -322,7 +322,7 @@ export function CreatePRModal({ isOpen, onClose, onCreatePR }: CreatePRModalProp
               type="submit"
               id="submit-pr-btn"
               disabled={isSubmitting}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2 text-xs font-semibold text-white hover:bg-indigo-500 transition-colors shadow-sm disabled:opacity-50 cursor-pointer"
+              className="btn-primary"
             >
               <Plus className="h-3.5 w-3.5" />
               <span>Register Pull Request</span>

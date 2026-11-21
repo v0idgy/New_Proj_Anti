@@ -20,7 +20,7 @@ export default async function AnalyticsPage() {
       {/* Header */}
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-zinc-100 sm:text-2xl">
+          <h1 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
             Velocity & Cycle Time Analytics
           </h1>
           <p className="text-xs sm:text-sm text-zinc-400">
@@ -70,8 +70,8 @@ export default async function AnalyticsPage() {
         <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-5 backdrop-blur-sm">
           <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
             <div className="flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-indigo-400" />
-              <h2 className="text-sm font-semibold text-zinc-200">
+              <BarChart3 className="h-4 w-4 text-red-400" />
+              <h2 className="text-sm font-semibold tracking-tight text-zinc-200">
                 Cycle Time SLA Health
               </h2>
             </div>
@@ -112,7 +112,7 @@ export default async function AnalyticsPage() {
                   <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all ${
-                        isHealthy ? 'bg-indigo-500' : 'bg-rose-500'
+                        isHealthy ? 'bg-red-500' : 'bg-rose-500'
                       }`}
                       style={{ width: `${percentage}%` }}
                     />
@@ -133,7 +133,7 @@ export default async function AnalyticsPage() {
           <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
             <div className="flex items-center gap-2">
               <Layers className="h-4 w-4 text-emerald-400" />
-              <h2 className="text-sm font-semibold text-zinc-200">
+              <h2 className="text-sm font-semibold tracking-tight text-zinc-200">
                 PR Size vs. Turnaround Correlation
               </h2>
             </div>
@@ -168,7 +168,7 @@ export default async function AnalyticsPage() {
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-sm font-mono font-bold text-indigo-400">
+                <div className="text-sm font-mono font-bold text-red-400">
                   14.6h avg
                 </div>
                 <div className="text-[10px] text-zinc-500">28% of all PRs</div>
@@ -198,7 +198,7 @@ export default async function AnalyticsPage() {
       {/* Weekly Throughput Table */}
       <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-5 backdrop-blur-sm">
         <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
-          <h2 className="text-sm font-semibold text-zinc-200">
+          <h2 className="text-sm font-semibold tracking-tight text-zinc-200">
             Sprint-over-Sprint Throughput Cadence
           </h2>
           <span className="text-xs text-zinc-400">Completed Batches</span>
@@ -226,7 +226,7 @@ export default async function AnalyticsPage() {
                   <td className="py-3 text-zinc-300">
                     {Math.round((item.mergedCount / item.openedCount) * 100)}%
                   </td>
-                  <td className="py-3 text-right text-indigo-400">
+                  <td className="py-3 text-right text-red-400">
                     {item.medianCycleHours}h
                   </td>
                 </tr>

@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-indigo-500/20 selection:text-indigo-300">
+      <body className="min-h-screen bg-zinc-950 text-zinc-400 font-sans antialiased selection:bg-red-500/20 selection:text-red-300">
         <ToastProvider>
           <AppShell>{children}</AppShell>
         </ToastProvider>

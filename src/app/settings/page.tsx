@@ -21,7 +21,7 @@ export default async function SettingsPage() {
       {/* Header */}
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-zinc-100 sm:text-2xl">
+          <h1 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
             Settings & Pipeline Configuration
           </h1>
           <p className="text-xs sm:text-sm text-zinc-400">
@@ -43,8 +43,8 @@ export default async function SettingsPage() {
           {/* SLA Thresholds Card */}
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-5 backdrop-blur-sm">
             <div className="flex items-center gap-2 pb-4 border-b border-zinc-800">
-              <Clock className="h-4 w-4 text-indigo-400" />
-              <h2 className="text-sm font-semibold text-zinc-200">
+              <Clock className="h-4 w-4 text-red-400" />
+              <h2 className="text-sm font-semibold tracking-tight text-zinc-200">
                 PR Turnaround & SLA Thresholds
               </h2>
             </div>
@@ -105,7 +105,7 @@ export default async function SettingsPage() {
             <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
               <div className="flex items-center gap-2">
                 <GitBranch className="h-4 w-4 text-emerald-400" />
-                <h2 className="text-sm font-semibold text-zinc-200">
+                <h2 className="text-sm font-semibold tracking-tight text-zinc-200">
                   Connected Source Repositories
                 </h2>
               </div>
@@ -133,7 +133,7 @@ export default async function SettingsPage() {
                   </div>
 
                   <div className="text-right">
-                    <span className="text-xs font-mono text-indigo-400 font-medium">
+                    <span className="text-xs font-mono text-red-400 font-medium">
                       {repo.openPRCount} open PRs
                     </span>
                   </div>
@@ -147,8 +147,8 @@ export default async function SettingsPage() {
         <div className="space-y-6">
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-5 backdrop-blur-sm space-y-4">
             <div className="flex items-center gap-2 pb-3 border-b border-zinc-800">
-              <Database className="h-4 w-4 text-indigo-400" />
-              <h3 className="text-sm font-semibold text-zinc-200">
+              <Database className="h-4 w-4 text-red-400" />
+              <h3 className="text-sm font-semibold tracking-tight text-zinc-200">
                 Data Layer Architecture
               </h3>
             </div>
@@ -167,7 +167,7 @@ export default async function SettingsPage() {
               <div className="rounded-lg border border-zinc-800 bg-zinc-950/60 p-3">
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-semibold text-zinc-200">Phase 2 Ready:</span>
-                  <span className="font-mono text-indigo-400">GitHub App / Webhook</span>
+                  <span className="font-mono text-red-400">GitHub App / Webhook</span>
                 </div>
                 <p className="text-[11px] text-zinc-500">
                   Zero schema breaking changes required when replacing mock providers with live REST or Octokit webhooks.
@@ -179,7 +179,7 @@ export default async function SettingsPage() {
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-5 backdrop-blur-sm space-y-4">
             <div className="flex items-center gap-2 pb-3 border-b border-zinc-800">
               <Bell className="h-4 w-4 text-amber-400" />
-              <h3 className="text-sm font-semibold text-zinc-200">
+              <h3 className="text-sm font-semibold tracking-tight text-zinc-200">
                 Alert Dispatch Channels
               </h3>
             </div>

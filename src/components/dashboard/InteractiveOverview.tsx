@@ -94,7 +94,7 @@ export function InteractiveOverview({
           <button
             onClick={() => setIsModalOpen(true)}
             id="register-pr-btn"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3.5 py-1.5 text-xs font-semibold text-white hover:bg-indigo-500 hover:shadow-indigo-500/25 hover:shadow-sm active:scale-[0.98] transition-all duration-200 ease-in-out cursor-pointer"
+            className="btn-primary"
           >
             <Plus className="h-4 w-4" />
             <span>New Pull Request</span>
@@ -113,7 +113,7 @@ export function InteractiveOverview({
           onClick={() => handleCardFilterClick('all')}
           className={`cursor-pointer rounded-xl transition-all ${
             statusFilter === 'all'
-              ? 'ring-2 ring-indigo-500/70 border-indigo-500/80 shadow-md shadow-indigo-500/10'
+              ? 'ring-2 ring-red-500/70 border-red-500/80 shadow-md shadow-red-500/10'
               : ''
           }`}
           title="Click to view all active PRs"
@@ -137,7 +137,7 @@ export function InteractiveOverview({
           }}
           className={`cursor-pointer rounded-xl transition-all ${
             sortField === 'cycleTimeHours'
-              ? 'ring-2 ring-indigo-500/70 border-indigo-500/80 shadow-md shadow-indigo-500/10'
+              ? 'ring-2 ring-red-500/70 border-red-500/80 shadow-md shadow-red-500/10'
               : ''
           }`}
           title="Click to sort by cycle time"
@@ -226,7 +226,7 @@ export function InteractiveOverview({
                     className="rounded-lg border border-zinc-800 bg-zinc-900/80 p-3 text-xs space-y-2 hover:border-zinc-700/80 hover:bg-zinc-850/80 hover:-translate-y-0.5 transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-mono font-medium text-indigo-400">
+                      <span className="font-mono font-medium text-red-400">
                         #{pr.number}
                       </span>
                       <PRStatusPill status={pr.status} />

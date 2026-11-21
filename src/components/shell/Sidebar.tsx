@@ -75,14 +75,14 @@ export function Sidebar({
           }`}
           onClick={isMobile ? onCloseMobile : undefined}
         >
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-600/20 border border-indigo-500/40 text-indigo-400">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-600/20 border border-red-500/40 text-red-400">
             <Activity className="h-4 w-4" />
           </div>
           {(!collapsed || isMobile) && (
             <div className="flex flex-col truncate">
-              <span className="text-sm font-bold tracking-tight text-zinc-100 flex items-center gap-1.5">
+              <span className="text-sm font-semibold tracking-tight text-zinc-100 flex items-center gap-1.5">
                 DevPulse
-                <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-red-500/10 text-red-400 border border-red-500/20">
                   v1.0
                 </span>
               </span>
@@ -129,11 +129,11 @@ export function Sidebar({
               } ${collapsed && !isMobile ? 'justify-center px-0' : ''}`}
             >
               {isActive && (
-                <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
+                <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.7)]" />
               )}
               <Icon
                 className={`h-4 w-4 shrink-0 transition-colors duration-200 ${
-                  isActive ? 'text-indigo-400' : 'text-zinc-400 group-hover:text-zinc-200'
+                  isActive ? 'text-red-400' : 'text-zinc-400 group-hover:text-zinc-200'
                 }`}
               />
 
@@ -145,7 +145,7 @@ export function Sidebar({
                 <span
                   className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full transition-colors duration-200 ${
                     isActive
-                      ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30'
+                      ? 'bg-red-500/20 text-red-300 border border-red-500/30'
                       : 'bg-zinc-800/90 text-zinc-400 group-hover:bg-zinc-700/80 group-hover:text-zinc-300'
                   }`}
                 >

@@ -19,7 +19,7 @@ export default async function TeamPage() {
       {/* Header */}
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-zinc-100 sm:text-2xl">
+          <h1 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">
             Team Review Capacity & Workload Balance
           </h1>
           <p className="text-xs sm:text-sm text-zinc-400">
@@ -29,7 +29,7 @@ export default async function TeamPage() {
 
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-1.5 text-xs text-zinc-300">
-            <Users className="h-3.5 w-3.5 text-indigo-400" />
+            <Users className="h-3.5 w-3.5 text-red-400" />
             {members.length} Active Engineers
           </span>
         </div>
@@ -79,7 +79,7 @@ export default async function TeamPage() {
                           ? 'bg-rose-500'
                           : isAvailable
                           ? 'bg-emerald-500'
-                          : 'bg-indigo-500'
+                          : 'bg-red-500'
                       }`}
                     />
                   </div>
@@ -98,7 +98,7 @@ export default async function TeamPage() {
                       ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
                       : isAvailable
                       ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                      : 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20'
+                      : 'bg-red-500/10 text-red-400 border-red-500/20'
                   }`}
                 >
                   {dev.loadStatus}
@@ -129,7 +129,7 @@ export default async function TeamPage() {
                 </div>
 
                 <div>
-                  <div className="text-lg font-mono font-bold text-indigo-400">
+                  <div className="text-lg font-mono font-bold text-red-400">
                     {dev.avgTurnaroundHours}h
                   </div>
                   <div className="text-[10px] text-zinc-500 uppercase">
@@ -145,7 +145,7 @@ export default async function TeamPage() {
       {/* Roster & Balance Matrix Table */}
       <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-5 backdrop-blur-sm">
         <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
-          <h2 className="text-sm font-semibold text-zinc-200">
+          <h2 className="text-sm font-semibold tracking-tight text-zinc-200">
             Workload Distribution Matrix
           </h2>
           <span className="text-xs text-zinc-400">Sorted by Queue Pressure</span>
@@ -187,7 +187,7 @@ export default async function TeamPage() {
                     <td className="py-3 font-mono text-zinc-300">
                       {ratio}x
                     </td>
-                    <td className="py-3 font-mono text-indigo-400">
+                    <td className="py-3 font-mono text-red-400">
                       {dev.avgTurnaroundHours}h
                     </td>
                     <td className="py-3 text-right">
@@ -197,7 +197,7 @@ export default async function TeamPage() {
                             ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
                             : dev.loadStatus === 'available'
                             ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                            : 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20'
+                            : 'bg-red-500/10 text-red-400 border-red-500/20'
                         }`}
                       >
                         {dev.loadStatus}

@@ -30,7 +30,7 @@ export function MetricCard({
         <span className="text-xs font-medium uppercase tracking-wider text-zinc-400">
           {title}
         </span>
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-950/60 text-zinc-400 group-hover:text-indigo-400 group-hover:border-indigo-500/30 transition-all duration-200 ease-in-out">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-950/60 text-zinc-400 group-hover:text-red-400 group-hover:border-red-500/30 transition-all duration-200 ease-in-out">
           <Icon className="h-4 w-4" />
         </div>
       </div>

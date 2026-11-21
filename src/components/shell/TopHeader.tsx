@@ -77,9 +77,9 @@ export function TopHeader({
         <div className="relative">
           <button
             onClick={() => setIsRepoOpen(!isRepoOpen)}
-            className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/80 px-2.5 py-1.5 text-xs font-medium text-zinc-300 hover:border-zinc-700 hover:bg-zinc-800 transition-colors"
+            className="flex items-center gap-2 rounded-lg border border-zinc-700 bg-transparent px-2.5 py-1.5 text-xs font-medium text-zinc-300 hover:border-zinc-600 hover:bg-zinc-800 transition-all duration-200"
           >
-            <GitBranch className="h-3.5 w-3.5 text-indigo-400" />
+            <GitBranch className="h-3.5 w-3.5 text-red-400" />
             <span className="max-w-[130px] truncate">{currentRepoName}</span>
             <ChevronDown className="h-3 w-3 text-zinc-500" />
           </button>
@@ -103,13 +103,13 @@ export function TopHeader({
                     }}
                     className={`flex w-full items-center justify-between rounded-md px-2.5 py-1.5 text-xs text-left transition-colors ${
                       selectedRepo === r.id
-                        ? 'bg-indigo-600/15 text-indigo-300 font-medium'
+                        ? 'bg-red-600/15 text-red-300 font-medium'
                         : 'text-zinc-300 hover:bg-zinc-800 hover:text-white'
                     }`}
                   >
                     <span className="truncate">{r.name}</span>
                     {selectedRepo === r.id && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
                     )}
                   </button>
                 ))}
@@ -142,7 +142,7 @@ export function TopHeader({
           aria-label="View notifications"
         >
           <Bell className="h-3.5 w-3.5" />
-          <span className="absolute top-1.5 right-1.5 h-1.5 w-1.5 rounded-full bg-indigo-500" />
+          <span className="absolute top-1.5 right-1.5 h-1.5 w-1.5 rounded-full bg-red-500" />
         </button>
 
         {/* Profile Avatar */}

@@ -84,9 +84,9 @@ export function EntityTable({
       return <ArrowUpDown className="h-3 w-3 text-zinc-500 opacity-60 group-hover:opacity-100 transition-opacity" />;
     }
     return sortDirection === 'asc' ? (
-      <ArrowUp className="h-3 w-3 text-indigo-400 font-bold" />
+      <ArrowUp className="h-3 w-3 text-red-400 font-bold" />
     ) : (
-      <ArrowDown className="h-3 w-3 text-indigo-400 font-bold" />
+      <ArrowDown className="h-3 w-3 text-red-400 font-bold" />
     );
   };
 
@@ -120,7 +120,7 @@ export function EntityTable({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search title, #number, author, branch..."
-            className="w-full rounded-lg border border-zinc-800 bg-zinc-950 pl-8 pr-8 py-1.5 text-xs text-zinc-100 placeholder-zinc-500 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-all duration-200 ease-in-out"
+            className="w-full rounded-lg border border-zinc-800 bg-zinc-950 pl-8 pr-8 py-1.5 text-xs text-zinc-100 placeholder-zinc-500 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-all duration-200 ease-in-out"
           />
           {searchQuery && (
             <button
@@ -142,7 +142,7 @@ export function EntityTable({
             aria-label="Filter by repository"
             value={repoFilter}
             onChange={(e) => setRepoFilter(e.target.value)}
-            className="rounded-lg border border-zinc-800 bg-zinc-950 px-2.5 py-1 text-xs text-zinc-300 focus:border-indigo-500 focus:outline-none transition-all duration-200 ease-in-out"
+            className="rounded-lg border border-zinc-800 bg-zinc-950 px-2.5 py-1 text-xs text-zinc-300 focus:border-red-500 focus:outline-none transition-all duration-200 ease-in-out"
           >
             {repos.map((r) => (
               <option key={r.id} value={r.id}>
@@ -170,8 +170,8 @@ export function EntityTable({
               onClick={() => setStatusFilter(cat.id)}
               className={`rounded-lg px-2.5 py-1 text-xs font-medium transition-all duration-200 ease-in-out shrink-0 ${
                 isSelected
-                  ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-600/30'
-                  : 'border border-zinc-800 bg-zinc-950/60 text-zinc-400 hover:border-zinc-700 hover:text-zinc-200 hover:bg-zinc-800/50'
+                  ? 'bg-red-600 text-white shadow-md shadow-red-500/25'
+                  : 'border border-zinc-700 bg-transparent text-zinc-300 hover:border-zinc-600 hover:text-zinc-100 hover:bg-zinc-800'
               }`}
             >
               {cat.label}
@@ -182,7 +182,7 @@ export function EntityTable({
         {(statusFilter !== 'all' || repoFilter !== 'all' || searchQuery) && (
           <button
             onClick={resetFilters}
-            className="ml-auto inline-flex items-center gap-1 text-[11px] text-indigo-400 hover:text-indigo-300 shrink-0 font-medium cursor-pointer transition-colors duration-200"
+            className="ml-auto inline-flex items-center gap-1 text-[11px] text-red-400 hover:text-red-300 shrink-0 font-medium cursor-pointer transition-colors duration-200"
           >
             <RotateCcw className="h-3 w-3" /> Reset Filters
           </button>
@@ -241,7 +241,7 @@ export function EntityTable({
                   </p>
                   <button
                     onClick={resetFilters}
-                    className="mt-3 inline-flex items-center gap-1 rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-1.5 text-xs text-zinc-200 hover:bg-zinc-700 transition-all duration-200 ease-in-out"
+                    className="mt-3 btn-secondary"
                   >
                     Reset all filters
                   </button>
@@ -263,7 +263,7 @@ export function EntityTable({
                   <td className="py-3.5 px-3">
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs font-semibold text-indigo-400">
+                        <span className="font-mono text-xs font-semibold text-red-400">
                           #{pr.number}
                         </span>
                         <span className="font-semibold text-zinc-200 group-hover:text-white transition-colors duration-200 tracking-tight">
@@ -390,7 +390,7 @@ export function EntityTable({
             </p>
             <button
               onClick={resetFilters}
-              className="mt-3 inline-flex items-center gap-1 rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-1.5 text-xs text-zinc-200 hover:bg-zinc-700 transition-all duration-200 ease-in-out"
+              className="mt-3 btn-secondary"
             >
               Reset all filters
             </button>
@@ -406,7 +406,7 @@ export function EntityTable({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <CIStatusBadge status={pr.ciStatus} />
-                  <span className="font-mono text-xs font-bold text-indigo-400">
+                  <span className="font-mono text-xs font-bold text-red-400">
                     #{pr.number}
                   </span>
                   <PRStatusPill status={pr.status} />
@@ -456,7 +456,7 @@ export function EntityTable({
               </div>
 
               {/* Title */}
-              <div className="font-semibold text-sm text-zinc-100 group-hover:text-indigo-300 transition-colors duration-200 tracking-tight leading-snug">
+              <div className="font-semibold text-sm text-zinc-100 group-hover:text-red-300 transition-colors duration-200 tracking-tight leading-snug">
                 {pr.title}
               </div>
 

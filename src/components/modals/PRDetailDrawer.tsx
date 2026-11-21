@@ -64,7 +64,7 @@ export function PRDetailDrawer({ pr, onClose }: PRDetailDrawerProps) {
         {/* Drawer Header */}
         <div className="flex items-center justify-between border-b border-zinc-800 p-4">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold text-indigo-400">
+            <span className="font-mono text-xs font-bold text-red-400">
               #{pr.number}
             </span>
             <PRStatusPill status={pr.status} />
@@ -83,7 +83,7 @@ export function PRDetailDrawer({ pr, onClose }: PRDetailDrawerProps) {
         <div className="flex-1 overflow-y-auto p-5 space-y-6 text-xs">
           {/* PR Title & Metadata */}
           <div>
-            <h2 className="text-sm font-bold text-zinc-100 leading-snug">
+            <h2 className="text-sm font-semibold tracking-tight text-zinc-100 leading-snug">
               {pr.title}
             </h2>
             <div className="mt-2 flex items-center gap-2 text-zinc-400">
@@ -113,7 +113,7 @@ export function PRDetailDrawer({ pr, onClose }: PRDetailDrawerProps) {
             </div>
 
             <div className="flex items-center gap-2 text-zinc-300 font-mono text-[11px] bg-zinc-900 p-2 rounded-lg border border-zinc-800">
-              <GitBranch className="h-3.5 w-3.5 text-indigo-400" />
+              <GitBranch className="h-3.5 w-3.5 text-red-400" />
               <span className="text-zinc-200">{pr.branch}</span>
               <span className="text-zinc-500">→</span>
               <span className="text-zinc-400">{pr.targetBranch}</span>
@@ -126,7 +126,7 @@ export function PRDetailDrawer({ pr, onClose }: PRDetailDrawerProps) {
               Review Cycle Timeline
             </span>
 
-            <div className="space-y-3 pl-2 border-l-2 border-indigo-500/40">
+            <div className="space-y-3 pl-2 border-l-2 border-red-500/40">
               <div className="relative pl-3">
                 <span className="absolute -left-[19px] top-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
                 <div className="font-semibold text-zinc-200">Opened</div>
@@ -136,7 +136,7 @@ export function PRDetailDrawer({ pr, onClose }: PRDetailDrawerProps) {
               </div>
 
               <div className="relative pl-3">
-                <span className="absolute -left-[19px] top-1 h-2.5 w-2.5 rounded-full bg-indigo-500" />
+                <span className="absolute -left-[19px] top-1 h-2.5 w-2.5 rounded-full bg-red-500" />
                 <div className="font-semibold text-zinc-200">Review In Progress</div>
                 <div className="text-[10px] text-zinc-500 font-mono">
                   Cycle latency: {pr.cycleTimeHours}h
@@ -214,9 +214,9 @@ export function PRDetailDrawer({ pr, onClose }: PRDetailDrawerProps) {
 
                   <button
                     onClick={() => handleNudge(rev.handle)}
-                    className="inline-flex items-center gap-1 rounded border border-zinc-700 bg-zinc-800 px-2 py-1 text-[11px] text-zinc-200 hover:bg-zinc-750 transition-colors"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-zinc-700 bg-transparent px-2.5 py-1 text-[11px] font-medium text-zinc-200 hover:bg-zinc-800 hover:border-zinc-600 active:scale-[0.98] transition-all duration-200"
                   >
-                    <Send className="h-3 w-3 text-indigo-400" />
+                    <Send className="h-3 w-3 text-red-400" />
                     <span>Ping</span>
                   </button>
                 </div>
